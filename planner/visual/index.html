@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+	<title>3d визуализация интерьера</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="Визуализация интерьера в 3d проекта планировки в программе планировщике RemPlanner." />	<meta name="robots" content="noindex"/>		<meta http-equiv="Content-Language" content="ru" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	
+		<link rel="canonical" href="https://remplanner.ru/planner/"/>
+		
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	
+						<meta property="og:title" content="Бесплатный онлайн планировщик Remplanner. Дизайн-проект квартиры своими руками" />
+			<meta property="og:image" content="https://remplanner.ru/images/design/vk.jpg" />	
+		
+	<link href="/files/min/?f=reset.css,classes.css,animation.css,layout.css,structure.css,structure_custom.css,structure_studio.css,mobile.css,jquery.fancybox.css,v2/planner_chat.css&amp;b=files/css&amp;v=1773332502" rel="stylesheet" type="text/css" />	
+	
+	
+	
+	<script src="/files/min/?f=jquery-3.1.1.min.js,jquery.fancybox.js,jquery.autocomplete.js,front.js,design.js,structure.js,v2/chat.js&amp;b=files/js&amp;v=1773332502" charset="utf-8" type="text/javascript"></script>
+	
+			<link href="/files/css/planner.css?1773332502" rel="stylesheet" type="text/css" />
+		<link href="/files/css/planner_ui.css?1773332502" rel="stylesheet" type="text/css" />
+		<link href="/files/css/mobile.css?1773332502" rel="stylesheet" type="text/css" />	
+				
+		
+		
+		
+	<script>
+		window.l10n = new Object();
+		const isAdmin = false;
+		const isProd = true;
+		const langUrl = '';
+	</script>
+	
+										
+		<meta name="yandex-verification" content="699999a24f1b21dd" />
+<meta name="p:domain_verify" content="bc3f1e525aed6b69be7218569cd38bd5"/>
+<meta name="facebook-domain-verification" content="moqapf9v0jf3n1lyfxwyptof4k55ja" /></head>
+
+<body class="lang_ru     dir_planner subdir_visual" data-object-id="5533608" data-authkey="30652584" data-plan_id="636643" data-save_id="18">
+
+<div id="container" class="planner_ui   studio  ">
+	
+	<div id="clientline" class="is_logged ">
+		<div id="clientline_auth">
+						<a href="/client/" id="clientline_user">marat23@bk.ru</a>
+									<div id="clientline_id">
+			
+									<a id="clientline_id_selector" class="" href="/client/"><b>Проект №5533608</b></a>
+				
+									<a href="/planner/pro/" id="clientline_web">Подключить PRO</a>							</div>
+			<a href="/client/logout/" id="clientline_register">Выйти</a>
+					</div>
+		<div id="clientline_contacts">
+						
+																	<a class="addr" href="/contacts/">Москва, Варсонофьевский пер. 4</a>
+														</div>
+	</div>
+	<div id="header_v3" class="">
+		<div id="header_v3_top" >
+															<a id="header_v3_logo" class="ru" href="/"></a>
+						
+						<div id="header_v3_phone">
+				<em id="mobile_button">Меню</em>
+				<a class="call" title="Позвонить в Ремпланнер" href="tel:+74957986631">8 (495) <span>798 66 31</span></a>
+								<!--<a class="whatsupp" title="Написать нам в WhatsApp" target="_blank" href="https://wa.me/79164289346"><img src="/images/design/v2/ui/v2/wa.svg" alt="" /></a>-->
+				<a class="telegram" title="Написать нам в Telegram" target="_blank" href="https://t.me/remplanner"><img src="/images/design/v2/ui/v2/tg.svg" alt="" /></a>
+							</div>
+						
+						
+						<ul class="">
+								<li class="menuid1 active"><a href="/planner/"
+					>Планировщик </a></li>
+								<li class="menuid3 "><a href="/dizayn_proekt_kvartiry/primery_chertegey/"
+					><span>Профессиональный</span> дизайн-проект </a></li>
+								<li class="menuid57 "><a href="/remont_kvartir_pod_klyuch/"
+					>Ремонт квартир </a></li>
+								<li class="menuid12 "><a href="/contacts/"
+					>Контакты </a></li>
+							</ul>
+			
+		</div>
+		
+				
+				
+				<div id="planner_header_wrapper">
+			<div id="planner_header" class=" ">
+								<div id="visual_settings_menu">
+	<div class="visual_settings_menu_item has_items" id="menu_settings">
+		<span>Настройки</span>
+	</div>
+	<div class="visual_settings_menu_item" id="menu_catalog">
+		<span>Материалы</span>
+	</div>
+	<div class="visual_settings_menu_item" id="menu_decor">
+		<span>Добавить декор</span>
+	</div>
+		<div id="visual_version"></div>
+</div>
+
+<!-- Emulation: dbgModal('') -->
+
+<div id="area_not_selected" style="display:none;" title="Вы не выбрали элемент для перекраски" data-close="закрыть окно">
+	<p>Для того, чтобы перекрасить элемент на сцене, сначала выделите его, кликнув по нему мышью.</p>
+</div>
+
+<div id="decor_without_furniture" style="display:none;" title="Невозможно выполнить действие" data-close="закрыть окно">
+	<p>Расставлять предметы декора нельзя, пока в настройках скрыты предметы мебели</p>
+</div>
+
+<div id="incorrect_project_data_loaded" style="display:none;" title="Невозможно загрузить проект" data-close="закрыть окно">
+	<p>Программе не удалось загрузить данные вашего проекта. Это может произойти по нескольким причинам:</p>
+	<ul>
+		<li>Медленное интернет-соединение</li>
+		<li>Эпизодическая недоступность сервера из вашей сети</li>
+		<li>Активные плагины VPN или блокировщики рекламы</li>
+	</ul>
+	<p>Чаще всего, обычный перезапуск загрузки проекта решает проблему и при повторной загрузке визуализация отобразится.
+	<b>Если вы видите данную ошибку постоянно</b>, пожалуйста, нажмите на клавиатуре сочетание клавиш <b>Alt+Shift+R</b> и затем напишите нам
+	в чат техподдержки (кнопка задать вопрос онлайн слева внизу).</p>
+	<p class="button-margined"><a class="mce-button tiny mini" href="">Перезапустить визуализацию</a></p>
+</div>
+
+<div id="webgl_not_supported" style="display:none;" title="В вашем браузере отключена поддержка WebGL" data-close="закрыть окно">
+	<p>В вашем браузере выключена или отсутствует поддержка WebGL. Эта технология необходима для корректной работы 3D-визуализации
+	в программе. <b>Чтобы включить WebGL</b> в вашем браузере, воспользуйтесь одной из инструкций:</p>
+	<ul>
+		<li><a class="color-blue" href="https://chromeum.ru/faq/how-to-enable-webgl-in-chrome" target="_blank">Включение WebGL в Google Chrome</a></li>
+		<li><a class="color-blue" href="https://yabrw.ru/faq/how-to-run-the-webgl-function-in-yandex-browser" target="_blank">Включение WebGL в Яндекс.Браузере</a></li>
+		<li><a class="color-blue" href="https://firefx.ru/faq/kak-vklucit-webgl-v-firefox" target="_blank">Включение WebGL в Firefox</a></li>
+	</ul>
+	<p>Технологию WebGL поддерживают абсолютно все современные устройства и браузеры. Если вы не находите такую настройку у себя
+	на компьютере, то в первую очередь обновите браузер и драйвер вашей видеокарты до последней версии. Если вам не помогла данная инструкция, напишите нам
+	в чат тех. поддержки в левом нижнем углу экрана.</p>
+</div>
+
+<div id="models_blocked_by_adblock" style="display:none;" title="Не удалось загрузить проект полностью" data-close="закрыть окно">
+	<p>К сожалению, при визуализации проекта возникла проблема с загрузкой моделей мебели, дверей и других элементов.
+	Если данная ошибка повторяется после перезагрузки страницы, то,
+	скорее всего, проблема заключается в <b>блокировщике рекламы, встроенном в ваш браузер</b> или установленном в качестве расширения/плагина.
+	Для того, чтобы исправить проблему, <b>внесите наш сайт в исключения</b> или временно отключите блокировщик для корректной загрузки
+	всех элементов визуализации.</p>
+	<p>Реже, аналогичную блокировку могут давать сторонние антивирусы и запреты в корпоративных сетях.</p>
+</div>
+
+<div id="walkmode_help" style="display:none;" title="Навигация в режиме виртуального тура" data-close="закрыть окно">
+	<ul style="margin-top:-10px">
+	<li>Вы можете перемещаться по комнатам вашего проекта, используя <strong class="color-green">стрелки на клавиатуре</strong>.</li>
+	<li>Чтобы изменить высоту полета камеры, нажимайте на <strong class="color-blue">кнопки + и - на клавиатуре</strong>.</li>
+	<li>Чтобы выйти из режима виртуального тура, выключите соответствующий ползунок в настройках или нажмите <strong class="color-red">Escape на клавиатуре</strong>.</li>
+	</ul>
+	<p class="button-margined"><a class="mce-button tiny mini" onclick="document.getElementById('preloader-app3d')?.remove();document.getElementById('fog_window_wrapper')?.remove();">Закрыть окно и продолжить</a></p>
+</div>
+
+<div id="walkmode_ortho_forbidden" style="display:none;" title="Невозможно выполнить действие" data-close="закрыть окно">
+	<p>Данный тип камеры недоступен для визуализации в режиме виртуального тура!</p>
+</div>
+
+<div id="export_gltf" title="Экспорт сцены в формате glTF 2.0" data-close="закрыть окно">
+	<p>Вы можете скачать полную копию текущей 3D-сцены проекта с включенными в нее моделями, материалами и объектами одним файлом в формате glTF 2.0 (расширение файла - .glb) для использования в сторонних программах для моделирования и рендеринга.</p>
+		<p class="function_is_disabled">Данная опция доступна <b class="color-red">только в тарифе Собственный</b> pro-версии программы!</p>
+	</div>
+
+<div class="title_anim_event" style="display:none;" eventName="toggle_open">Показать открывание</div>
+<div class="title_is_constructor" style="display:none;">Изменяемые фасады и ручки</div>
+<div id="msg_load_project" style="display:none;">Загрузка проекта</div>
+<div id="msg_create_apartment" style="display:none;">Создание помещений</div>
+<div id="msg_loaded_model" style="display:none;">Загружена модель</div>
+<div id="msg_critical_error" style="display:none;">Критическая ошибка</div>
+<div id="err_support_webgl" style="display:none;">В вашем браузере отключена поддержка WebGL</div>
+<div id="err_broken_project" style="display:none;">Невозможно загрузить проект</div>							</div>
+			
+
+			<div id="planner_ui_functions" class="">
+
+							
+										<div class="planner_ui_function save">
+						<a id="save_visual" class="active"></a><div class="planner_ui_function_note">Сохранить</div>
+						<div id="planner_ui_save_alert"><em></em><span>Вы давно не сохраняли проект!</span></div>
+					</div>
+					
+											<div class="planner_ui_function export_gltf">
+							<a id="export3d_instructions"></a>
+							<div class="planner_ui_function_note">Экспорт сцены в формате glTF</div>
+						</div>
+						<div class="planner_ui_function screenshot">
+							<a id="visual_make_screenshot"></a>
+							<div class="planner_ui_function_note">Сохранить изображение</div>
+							<div id="visual_save_as_image">
+								<a data-size="3000x2000" class="visual_top_menu_item image_h">Горизонтальный снимок (3:2)</a>
+								<a data-size="2000x2000" class="visual_top_menu_item image_sq">Квадратный снимок (1:1)</a>
+								<a data-size="2000x3000" class="visual_top_menu_item image_v">Вертикальный снимок (2:3)</a>
+								<a data-size="screen" class="visual_top_menu_item image_s">Сохранить по экрану</a>
+							</div>
+						</div>
+										
+					
+				
+				<div class="planner_ui_mode">
+					<div class="planner_ui_mode_item  plan" id="mode2d">
+						<a href="/planner/"><img src="/images/planner/layout/mode_2d.svg" alt=""/><span><em>2D</em></span></a>
+					</div>
+					<div class="planner_ui_mode_item projections" >
+						<a onclick="load_fullpage_modal_from_id('projections');"href="/planner/#projections"><img src="/images/planner/layout/mode_pr.svg" alt=""/><span><em>Стены</em></span></a>
+					</div>
+					<div class="planner_ui_mode_item visual active" id="mode3d">>
+						<a href="/planner/visual/"><img src="/images/planner/layout/mode_3d.svg" alt=""/><span><em>3D</em></span></a>
+											</div>
+				</div>
+
+										<div class="planner_ui_function  weights"><a href="/planner/weights/"></a><div class="planner_ui_function_note">Объемы и метражи</div></div>
+											<div class="planner_ui_function   smeta"><a href="/planner/smeta/"></a><div class="planner_ui_function_note">Смета по чертежам</div></div>
+						<div class="planner_ui_function   materials"><a href="/planner/smeta/materials/"></a><div class="planner_ui_function_note">Строительные материалы</div></div>
+										
+					<div class="planner_ui_function pro ">
+						<a href="/planner/pro/"></a><div class="planner_ui_function_note">Подключить PRO-версию</div>
+												<div id="pro_message">
+							<p>Данный инструмент доступен в PRO-версии программы.</p>
+							<a class="pre_button orange" href="/planner/pro/"><span>Подключить PRO-версию</span></a>
+							<span id="pro_message_close">закрыть окно</span>
+						</div>
+											</div>
+				
+			</div>
+
+			
+		</div>
+				
+	</div>
+	
+		
+<div class="pre_promo_wrapper">
+	
+	<div class="pre_promo">
+	
+		<h1 class="pre_promo_title font36 font-bold color-blue">Интерактивная 3D-визуализация ваших чертежей</h1>
+		<h3 class="pre_promo_subtitle font36">с фотореалистичной сменой цветов и текстур</h3>
+		
+		<div id="webgl_intro_container">
+			<div id="webgl_intro_laptop">
+				<img src="/images/design/v2/3d/laptop.jpg" alt="" />
+				<div id="webgl_intro_video">
+				   				   <img class="first active" src="/images/design/v2/3d/slide_1.jpg" alt="" />
+				   <img class="" src="/images/design/v2/3d/slide_2.jpg" alt="" />
+				   <img class="last" src="/images/design/v2/3d/slide_3.jpg" alt="" />
+				   				</div>
+				<div class="webgl_intro_laptop_sticker" style="top:140px;color:#446e09;">Высочайшее качество<br/> моделей и текстур</div>
+				<div class="webgl_intro_laptop_sticker" style="top:280px;color:#0b8269;">Настройки освещения<br/> и ракурсов камеры</div>
+				<div class="webgl_intro_laptop_sticker" style="top:140px;color:#733f14;">Конструктор отделки<br/> от ламината до подушек</div>
+				<div class="webgl_intro_laptop_sticker" style="top:280px;color:#446e09;">Полное соответствие<br/> чертежам и планировке</div>
+				<!--<a href="/planner/webgl/demo/" class="pulse" id="webgl_demo">Запустить <b>демо-версию</b></a>-->
+			</div>
+		</div>	
+
+		<div id="webgl_auth_wrapper">
+			
+			<p class="pre_promo_button" id="webgl_auth_start">
+				<a onclick="webgl_start_check();" class="pre_button large"><span>Запустить 3D-визуализацию проекта</span></a>
+			</p>
+			
+			<div id="webgl_auth_data">
+			
+				<div class="pre_promo_title font32">Подготовка к визуализации чертежей</div>
+				<div id="start_webgl_meter">
+					<div id="start_webgl_meter_title">
+						<span>1. Проверка координат стен и перегородок...</span>
+						<span>2. Расчет дверных и оконных проемов...</span>
+						<span>3. Проверка расстановки мебели и сантехники...</span>
+						<span>4. Формирование отделки помещений...</span>
+						<span>5. Построение комнат по координатным точкам...</span>
+					</div>
+					<div class="meter"><span style="width:5%;"></span></div>
+				</div>
+				
+				<div id="start_webgl_finish">
+					
+										<div id="is_pro_alert"></div>
+					<strong class="color-red">3D-визуализация доступна в PRO-версии планировщика!</strong>
+					<p class="pre_promo_button">
+						<a href="/planner/pro/" class="pre_button mini orange"><span>Подключить PRO-версию программы</span></a>
+					</p>
+					
+									</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<div class="pre_promo_wrapper pre_blue">
+	
+	<div class="pre_promo">
+	
+		<div class="pre_promo_title font44 color-blue">Фотореалистичные модели мебели</div>
+		<div class="pre_promo_subtitle font32">с полноценным конструктором текстур и материалов</div>
+		
+			<div id="webgl_slider_wrapper">
+				<img src="/images/design/v2/3d/bed.png" alt="" />
+				
+				<img id="pillow1" src="/images/design/v2/3d/pillow_1.png" class="pillow active" alt="" />
+				<img id="pillow2" src="/images/design/v2/3d/pillow_2.png" class="pillow" alt="" />
+				<img id="pillow3" src="/images/design/v2/3d/pillow_3.png" class="pillow" alt="" />
+				<img id="pillow4" src="/images/design/v2/3d/pillow_4.png" class="pillow" alt="" />
+				<img id="pillow5" src="/images/design/v2/3d/pillow_5.png" class="pillow" alt="" />
+				
+				<img id="od1" src="/images/design/v2/3d/od_1.png" class="od active" alt="" />
+				<img id="od2" src="/images/design/v2/3d/od_2.png" class="od" alt="" />
+				<img id="od3" src="/images/design/v2/3d/od_3.png" class="od" alt="" />
+				<img id="od4" src="/images/design/v2/3d/od_4.png" class="od" alt="" />
+				<img id="od5" src="/images/design/v2/3d/od_5.png" class="od" alt="" />
+				
+				<div class="webgl_slider_text">Все предметы мебели разделены на составные части, каждую из которых можно перекрасить
+				или изменить текстуру.</div>
+				<div class="webgl_slider_text">Все текстуры тщательно отобраны дизайнерами и подготовлены по группам (ткани, 
+				дерево, пластик и так далее).</div>
+				<div class="webgl_slider_text">Все элементы интерьеров и мебели собраны на основе настоящих товаров, которые можно приобрести в магазинах.</div>
+				<div class="webgl_slider_set_image pulse">Перекрасить подушку</div>
+				<div class="webgl_slider_set_image_list">
+					<div data-id="pillow1" data-group="pillow" class="webgl_slider_set_image_item active"><img src="/images/design/v2/3d/texture_1.jpg" alt="" /></div>
+					<div data-id="pillow2" data-group="pillow" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_2.jpg" alt="" /></div>
+					<div data-id="pillow3" data-group="pillow" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_3.jpg" alt="" /></div>
+					<div data-id="pillow4" data-group="pillow" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_4.jpg" alt="" /></div>
+					<div data-id="pillow5" data-group="pillow" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_5.jpg" alt="" /></div>
+				</div>
+				<div class="webgl_slider_set_image pulse blue">Перекрасить покрывало</div>
+				<div class="webgl_slider_set_image_list">
+					<div data-id="od1" data-group="od" class="webgl_slider_set_image_item active"><img src="/images/design/v2/3d/texture_6.jpg" alt="" /></div>
+					<div data-id="od2" data-group="od" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_2.jpg" alt="" /></div>
+					<div data-id="od3" data-group="od" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_7.jpg" alt="" /></div>
+					<div data-id="od4" data-group="od" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_8.jpg" alt="" /></div>
+					<div data-id="od5" data-group="od" class="webgl_slider_set_image_item"><img src="/images/design/v2/3d/texture_9.jpg" alt="" /></div>
+				</div>
+			</div>
+			
+		<div class="pre_promo_title font30 color-blue">Это реальная модель кровати из программы!</div>
+		<div class="pre_promo_subtitle font24" style="padding-bottom:0;">Именно такого качества визуализации мы добились в RemPlanner3D!</div>
+	</div>
+	
+</div>
+
+<div class="pre_promo_wrapper max1160">
+	
+	<div class="pre_promo">
+	
+		<div class="pre_promo_title font44 color-orange">Простой. Удобный. Интерактивный.</div>
+		<div class="pre_promo_subtitle font30">Мы создали уникальный продукт, не имеющий аналогов</div>
+		
+		<div id="order_tech_intro_plans_wrapper" class="webgl">
+			<div id="order_tech_intro_plans" class="webgl">
+				<div class="order_tech_intro_plan">
+					Не требует скачивания<br /> и установки на компьютер
+				</div>
+				<div class="order_tech_intro_plan">
+					Автоматическое сохранение<br /> любых изменений
+				</div>
+				<div class="order_tech_intro_plan">
+					Онлайн доступ к программе<br /> с любых устройств
+				</div>
+				<div class="order_tech_intro_plan">
+					Все изменения на чертежах<br /> сразу перенесутся в 3D
+				</div>
+				<div class="order_tech_intro_plan">
+					Никаких ограничений по<br /> времени и количеству комнат
+				</div>
+				<div class="order_tech_intro_plan">
+					Все текстуры и модели<br /> открыты и доступны сразу
+				</div>
+			</div>
+		</div>
+		
+		<div class="pre_promo_title font32 font-bold color-blue">Качественная интерактивная визуализация сразу</div>
+		<div class="pre_promo_subtitle font30">без ожидания рендеров и ракурсов. Здесь и сейчас.</div>
+		
+		
+		<div id="webgl_promo_quality_header">
+			<div class="webgl_promo_quality_header_row">
+				<strong class="color-orange">Качество, которое предлагают другие</strong>
+				<span>Это реальные скриншоты из программ и сервисов,<br /> предназначенных для визуализации квартир.</span>
+			</div>
+			<div class="webgl_promo_quality_header_row">
+				<strong class="color-green">Качество, которое дает RemPlanner3D</strong>
+				<span>Это не статичный рендер, а реальный скриншот из<br /> нашей программы в режиме онлайн работы.</span>
+			</div>
+		</div>
+		
+		<table id="webgl_promo_quality">
+			<tr>
+				<td><a href="/images/design/v2/3d/ex_1.jpg" class="fancybox"><img src="/images/design/v2/3d/ex_1.jpg" alt="" /></a></td>
+				<td><a href="/images/design/v2/3d/ex_2.jpg" class="fancybox"><img src="/images/design/v2/3d/ex_2.jpg" alt="" /></a></td>
+				<td rowspan="2" style="width:1px;padding:5px 20px;">&nbsp;</td>
+				<td style="width:50%;" colspan="2" rowspan="2"><img src="/images/design/v2/3d/ex_5.jpg" alt="" /></td>
+			</tr>
+			<tr>
+				<td><a href="/images/design/v2/3d/ex_3.jpg" class="fancybox"><img src="/images/design/v2/3d/ex_3.jpg" alt="" /></a></td>
+				<td><a href="/images/design/v2/3d/ex_4.jpg" class="fancybox"><img src="/images/design/v2/3d/ex_4.jpg" alt="" /></a></td>
+			</tr>
+		</table>
+		
+		<p class="pre_promo_button" id="webgl_go_to_start">
+			<a class="pre_button large" onclick="webgl_go_to_check();"><span>Запустить 3D-визуализацию проекта</span></a>
+		</p>
+		
+	</div>
+	
+</div>
+
+
+<div id="planner_popup_overlay" class="" onclick="close_planner_popup(true);"></div>
+
+	
+		<div id="common_footer">
+		<div id="common_footer_mark_l"></div>
+		<div id="common_footer_left">
+			<ul id="footer_socials">
+				<li id="footer_blog"><a href="/blog/">Записки дизайнера</a></li>
+				<!--noindex-->
+				<li class="blank"></li>
+				<li id="footer_youtube"><a target="_blank" rel="nofollow" href="https://www.youtube.com/c/RemPlanner/videos">Мы в YouTube:</a></li>
+				<li class="blank"></li>
+				<li>Мы в соцсетях:</li>
+				<li><a rel="nofollow" target="_blank" href="https://www.instagram.com/remplanner/" class="social in"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://dzen.ru/remplanner" class="social dz"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://vk.com/remplanner" class="social vk"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://t.me/remplanner_blog" class="social tg"></a></li>
+				<!--/noindex-->
+			</ul>
+			© 2026 Дизайн-студия Ремпланнер. <br />
+			<!--<a class="footer_terms" href="/payments_kz/">Политика конфиденциальности</a>&nbsp;&nbsp;&nbsp;
+			<a class="footer_terms" href="/terms_kz/">Оферта</a>&nbsp;&nbsp;&nbsp;
+			<a class="footer_terms" href="/cloudpayments/">Онлайн оплата</a>		-->	
+							<em>Remplanner является <a href="/trademark/">зарегистрированным товарным знаком</a>.</em>
+			
+		</div>
+		<div id="common_footer_mark_r"></div>
+	</div>
+		
+	<div id="for_print" onclick="$(this).remove();"><div></div></div>
+	
+</div>
+
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript" >setTimeout(function(){ (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(44572141, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true,  trackHash:true, ecommerce:"dataLayer" }); }, 1000);</script> <!-- /Yandex.Metrika counter --></body>
+</html>

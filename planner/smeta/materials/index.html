@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+	<title>Расчёт подробной сметы для ремонта на основе чертежй в планировщике RemPlanner</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="Черновые и отделочные материалы сметы для ремонта по чертежам из планировщика Ремпланнер." />			<meta http-equiv="Content-Language" content="ru" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	
+		<link rel="canonical" href="https://remplanner.ru/planner/smeta/materials/"/>
+		
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	
+						<meta property="og:title" content="Бесплатный онлайн планировщик Remplanner. Дизайн-проект квартиры своими руками" />
+			<meta property="og:image" content="https://remplanner.ru/images/design/vk.jpg" />	
+		
+	<link href="/files/min/?f=reset.css,classes.css,animation.css,layout.css,structure.css,structure_custom.css,structure_studio.css,mobile.css,jquery.fancybox.css,v2/planner_chat.css&amp;b=files/css&amp;v=1773332502" rel="stylesheet" type="text/css" />	
+	
+	
+			
+	<script src="/files/min/?f=jquery-3.1.1.min.js,jquery.fancybox.js,jquery.autocomplete.js,front.js,design.js,structure.js,v2/chat.js&amp;b=files/js&amp;v=1773332502" charset="utf-8" type="text/javascript"></script>
+	
+			<link href="/files/css/planner.css?1773332502" rel="stylesheet" type="text/css" />
+		<link href="/files/css/planner_ui.css?1773332502" rel="stylesheet" type="text/css" />
+		<link href="/files/css/mobile.css?1773332502" rel="stylesheet" type="text/css" />	
+		<script src="/files/js/jquery.slimscroll.js" type="text/javascript"></script>		
+			<link href="/files/calc/css/smeta.css?1773332502" rel="stylesheet" type="text/css" />
+		<link href="/files/calc/css/remont.css" rel="stylesheet" type="text/css" />
+		<link href="/files/calc/css/budget_calculator.css" rel="stylesheet" type="text/css" />
+		<script src="/files/calc/js/remcalc.js" type="text/javascript"></script>
+		<script src="/files/calc/js/smeta.js?1773332502" type="text/javascript"></script>
+		<script src="/files/calc/js/budget_calculator.js" type="text/javascript"></script>
+		
+		
+		
+	<script>
+		window.l10n = new Object();
+		const isAdmin = false;
+		const isProd = true;
+		const langUrl = '';
+	</script>
+	
+										
+		<meta name="yandex-verification" content="699999a24f1b21dd" />
+<meta name="p:domain_verify" content="bc3f1e525aed6b69be7218569cd38bd5"/>
+<meta name="facebook-domain-verification" content="moqapf9v0jf3n1lyfxwyptof4k55ja" /></head>
+
+<body class="lang_ru     dir_planner subdir_smeta" data-object-id="5533608" data-authkey="30652584" data-plan_id="636643" data-save_id="18">
+
+<div id="container" class="planner_ui   studio  ">
+	
+	<div id="clientline" class="is_logged ">
+		<div id="clientline_auth">
+						<a href="/client/" id="clientline_user">marat23@bk.ru</a>
+									<div id="clientline_id">
+			
+									<a id="clientline_id_selector" class="" href="/client/"><b>Проект №5533608</b></a>
+				
+									<a href="/planner/pro/" id="clientline_web">Подключить PRO</a>							</div>
+			<a href="/client/logout/" id="clientline_register">Выйти</a>
+					</div>
+		<div id="clientline_contacts">
+						
+																	<a class="addr" href="/contacts/">Москва, Варсонофьевский пер. 4</a>
+														</div>
+	</div>
+	<div id="header_v3" class="">
+		<div id="header_v3_top" >
+															<a id="header_v3_logo" class="ru" href="/"></a>
+						
+						<div id="header_v3_phone">
+				<em id="mobile_button">Меню</em>
+				<a class="call" title="Позвонить в Ремпланнер" href="tel:+74957986631">8 (495) <span>798 66 31</span></a>
+								<!--<a class="whatsupp" title="Написать нам в WhatsApp" target="_blank" href="https://wa.me/79164289346"><img src="/images/design/v2/ui/v2/wa.svg" alt="" /></a>-->
+				<a class="telegram" title="Написать нам в Telegram" target="_blank" href="https://t.me/remplanner"><img src="/images/design/v2/ui/v2/tg.svg" alt="" /></a>
+							</div>
+						
+						
+						<ul class="">
+								<li class="menuid1 active"><a href="/planner/"
+					>Планировщик </a></li>
+								<li class="menuid3 "><a href="/dizayn_proekt_kvartiry/primery_chertegey/"
+					><span>Профессиональный</span> дизайн-проект </a></li>
+								<li class="menuid57 "><a href="/remont_kvartir_pod_klyuch/"
+					>Ремонт квартир </a></li>
+								<li class="menuid12 "><a href="/contacts/"
+					>Контакты </a></li>
+							</ul>
+			
+		</div>
+		
+				
+				
+				<div id="planner_header_wrapper">
+			<div id="planner_header" class=" ">
+								<div id="groups_navi_wrapper" class="">
+	<div id="groups_navi">
+								<a class="groups_navi_item    plan_init"
+						data-plan="init"						href="/planner/plan/init/"			>Исходный план<span class="navi_error"></span></a>
+																<a class="groups_navi_item    plan_break_walls"
+						data-plan="break_walls"						href="/planner/plan/break_walls/"			>Демонтаж<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_create_walls"
+						data-plan="create_walls"						href="/planner/plan/create_walls/"			>Перегородки<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_rooms"
+						data-plan="rooms"						href="/planner/plan/rooms/"			>Помещения<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_radiators"
+						data-plan="radiators"						href="/planner/plan/radiators/"			>Радиаторы<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_furniture"
+						data-plan="furniture"						href="/planner/plan/furniture/"			>Мебель<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_santeh"
+						data-plan="santeh"						href="/planner/plan/santeh/"			>Сантехника<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_waterplan"
+						data-plan="waterplan"						href="/planner/plan/waterplan/"			>Водоснабжение<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_sockets"
+						data-plan="sockets"						href="/planner/plan/sockets/"			>Розетки<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_light_connections"
+						data-plan="light_connections"						href="/planner/plan/light_connections/"			>Выключатели<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_light"
+						data-plan="light"						href="/planner/plan/light/"			>Освещение<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_cables"
+						data-plan="cables"						href="/planner/plan/cables/"			>Электропроводка<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_shield"
+						data-plan="shield"						href="/planner/plan/shield/"			>Электрощиток<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_warm_floor"
+						data-plan="warm_floor"						href="/planner/plan/warm_floor/"			>Теплые полы<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_conditioners"
+						data-plan="conditioners"						href="/planner/plan/conditioners/"			>Кондиционеры<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_ventilation"
+						data-plan="ventilation"						href="/planner/plan/ventilation/"			>Вентиляция<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_security"
+						data-plan="security"						href="/planner/plan/security/"			>Безопасность<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_floor"
+						data-plan="floor"						href="/planner/plan/floor/"			>Напольные покрытия<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_walls"
+						data-plan="walls"						href="/planner/plan/walls/"			>Отделка стен<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_ceiling"
+						data-plan="ceiling"						href="/planner/plan/ceiling/"			>Потолки<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_hydroisolation"
+						data-plan="hydroisolation"						href="/planner/plan/hydroisolation/"			>Гидроизоляция<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_isolation"
+						data-plan="isolation"						href="/planner/plan/isolation/"			>Изоляция<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_shtukaturka"
+						data-plan="shtukaturka"						href="/planner/plan/shtukaturka/"			>Штукатурка<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_projections"
+			style="display:none;"			data-plan="projections"						href="/planner/plan/projections/"			>Развертки стен<span class="navi_error"></span></a>
+											<a class="groups_navi_item    plan_styazhka"
+						data-plan="styazhka"						href="/planner/plan/styazhka/"			>Стяжка<span class="navi_error"></span></a>
+								</div>
+	<div id="groups_prev" onclick="navi_prev();"></div>
+	<div id="groups_next" onclick="navi_next();"></div>
+</div>							</div>
+			
+
+			<div id="planner_ui_functions" class="">
+
+							
+					
+										
+					
+				
+				<div class="planner_ui_mode">
+					<div class="planner_ui_mode_item  plan" id="mode2d">
+						<a href="/planner/"><img src="/images/planner/layout/mode_2d.svg" alt=""/><span><em>2D</em></span></a>
+					</div>
+					<div class="planner_ui_mode_item projections" >
+						<a onclick="load_fullpage_modal_from_id('projections');"href="/planner/#projections"><img src="/images/planner/layout/mode_pr.svg" alt=""/><span><em>Стены</em></span></a>
+					</div>
+					<div class="planner_ui_mode_item visual " id="mode3d">>
+						<a href="/planner/visual/"><img src="/images/planner/layout/mode_3d.svg" alt=""/><span><em>3D</em></span></a>
+											</div>
+				</div>
+
+										<div class="planner_ui_function  weights"><a href="/planner/weights/"></a><div class="planner_ui_function_note">Объемы и метражи</div></div>
+											<div class="planner_ui_function   smeta"><a href="/planner/smeta/"></a><div class="planner_ui_function_note">Смета по чертежам</div></div>
+						<div class="planner_ui_function active  materials"><a href="/planner/smeta/materials/"></a><div class="planner_ui_function_note">Строительные материалы</div></div>
+										
+					<div class="planner_ui_function pro ">
+						<a href="/planner/pro/"></a><div class="planner_ui_function_note">Подключить PRO-версию</div>
+												<div id="pro_message">
+							<p>Данный инструмент доступен в PRO-версии программы.</p>
+							<a class="pre_button orange" href="/planner/pro/"><span>Подключить PRO-версию</span></a>
+							<span id="pro_message_close">закрыть окно</span>
+						</div>
+											</div>
+				
+			</div>
+
+			
+		</div>
+				
+	</div>
+	
+		<div class="str_block_wrapper" id="smeta_materials_intro">
+
+	<div class="mce-content-body">
+
+		<h1 class="header1 align-center font38 color-blue">Подробная смета на строительные материалы</h1>
+		<div class="header2 align-center font30">по вашим чертежам. От проводов до саморезов</div>
+
+		<p class="align-center max600">
+			Нарисуйте чертежи для своего будущего ремонта, заполнив все планировочные листы, а планировщик автоматически
+			рассчитает все необходимые для их реализации материалы.
+		</p>
+		
+		<div id="smeta_materials_teasers">
+
+			<div class="smeta_materials_teaser">
+				<strong class="color-orange">Сыпучие смеси</strong>
+				<p>Пескобетон, штукатурка, плиточные клеи, керамзит, цемент и прочие смеси</p>
+			</div>
+			<div class="smeta_materials_teaser">
+				<strong class="color-orange">Перегородки</strong>
+				<p>Пазогребневые плиты, пеноблоки, кирпичи, монтажные клеи и подвесы</p>
+			</div>
+			<div class="smeta_materials_teaser">
+				<strong class="color-orange">Гипсокартон</strong>
+				<p>Гипсокартонные листы (по толщине и влагостойкости), профили для крепления</p>
+			</div>
+
+			<div class="smeta_materials_teaser">
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Сантехника</strong>
+					<p>Трубы водоснабжения и канализации, коллекторы, краны и прочее</p>
+				</div>
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Электрика</strong>
+					<p>Кабели и провода всех сечений, гофрорукава, подрозетники, автоматы и прочее</p>
+				</div>
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Кондиционеры</strong>
+					<p>Кронштейны, шланги, медные трубки, анкера, теплоизоляция для труб</p>
+				</div>
+			</div>
+			<div class="smeta_materials_teaser double">
+				<img src="/images/design/v2/smeta/materials/cart.png" alt="" />
+			</div>
+			<div class="smeta_materials_teaser">
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Малярные смеси</strong>
+					<p>Все виды шпаклевок, грунтовки, клеевые составы, краски, стеклохолст</p>
+				</div>
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Изоляция</strong>
+					<p>Звуко- и теплоизоляционные плиты и панели, гидроизоляция, герметики</p>
+				</div>
+				<div class="smeta_materials_teaser">
+					<strong class="color-orange">Металлопрокат</strong>
+					<p>Арматура, армирующая сетка, швеллеры, металлические профили и прочее</p>
+				</div>
+			</div>
+
+
+		</div>
+		
+		<p class="align-center max700" style="font-size:16px;">
+			Всего программа обсчитывает более 300 различных материалов, включая даже такие мелочи как саморезы, дюбели
+			и монтажная пена. 
+		</p>
+
+		<p class="align-center max700">
+					<a onclick="$(this).remove();$('#smeta_materials_intro_warning').addClass('expandUp');" class="mce-button green">Запустить расчет материалов</a>
+			<span id="smeta_materials_intro_warning" class="color-red"><strong>Обратите внимание!</strong> Доступ к разделу возможен только в старших тарифах <strong>PRO-версии</strong>!</span>
+			<a href="/planner/pro/" class="mce-button small">Что такое PRO и как подключить?</a>
+				</p>
+
+	</div>
+		
+</div>
+<div id="planner_popup_overlay" class="" onclick="close_planner_popup(true);"></div>
+
+	
+		<div id="common_footer">
+		<div id="common_footer_mark_l"></div>
+		<div id="common_footer_left">
+			<ul id="footer_socials">
+				<li id="footer_blog"><a href="/blog/">Записки дизайнера</a></li>
+				<!--noindex-->
+				<li class="blank"></li>
+				<li id="footer_youtube"><a target="_blank" rel="nofollow" href="https://www.youtube.com/c/RemPlanner/videos">Мы в YouTube:</a></li>
+				<li class="blank"></li>
+				<li>Мы в соцсетях:</li>
+				<li><a rel="nofollow" target="_blank" href="https://www.instagram.com/remplanner/" class="social in"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://dzen.ru/remplanner" class="social dz"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://vk.com/remplanner" class="social vk"></a></li>
+				<li><a rel="nofollow" target="_blank" href="https://t.me/remplanner_blog" class="social tg"></a></li>
+				<!--/noindex-->
+			</ul>
+			© 2026 Дизайн-студия Ремпланнер. <br />
+			<!--<a class="footer_terms" href="/payments_kz/">Политика конфиденциальности</a>&nbsp;&nbsp;&nbsp;
+			<a class="footer_terms" href="/terms_kz/">Оферта</a>&nbsp;&nbsp;&nbsp;
+			<a class="footer_terms" href="/cloudpayments/">Онлайн оплата</a>		-->	
+							<em>Remplanner является <a href="/trademark/">зарегистрированным товарным знаком</a>.</em>
+			
+		</div>
+		<div id="common_footer_mark_r"></div>
+	</div>
+		
+	<div id="for_print" onclick="$(this).remove();"><div></div></div>
+	
+</div>
+
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript" >setTimeout(function(){ (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(44572141, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true,  trackHash:true, ecommerce:"dataLayer" }); }, 1000);</script> <!-- /Yandex.Metrika counter --></body>
+</html>

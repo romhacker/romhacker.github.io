@@ -1,0 +1,341 @@
+#budget_calculator {
+	position: relative;
+	min-height: calc(100% - 125px);
+}
+#budget_calculator_slides {
+	top: 79px;
+	left: 40px;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+	position: absolute;
+}
+#budget_calculator_navi {
+	position: relative;
+	background: #f4f4f4;
+	font-size: 0;
+	line-height: 0;
+	text-align: left;
+	z-index: 1;
+	padding-left: 42px;
+}
+#budget_calculator_navi:after {
+	position: absolute;
+	background: rgba(0,0,0, 0.15);
+	height: 1px;
+	left: 0;
+	top: 100%;
+	right: 0;
+	content: '';
+	z-index: 1;
+}
+#budget_calculator_navi_export {
+	background: #3baa00;
+    background: linear-gradient(90deg, #3baa00 90%, #3baa00 95%, #2b7b00 100%);
+	width: 42px;
+	position: absolute;
+	bottom: -1px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	border-bottom: 1px solid #50cc0e;
+}
+#budget_calculator_navi_export a {
+	display: block;
+	height: 39px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+#budget_calculator_navi_export a+a {
+	border-top: 1px solid #50cc0e;
+}
+#budget_calculator_navi_export a#budget_calculator_excel {
+	background: transparent url(/images/design/v2/ui/smeta/excel.png) 50% 50% no-repeat;
+	background-size: 20px 20px;
+}
+#budget_calculator_navi_export a#budget_calculator_print {
+	background: transparent url(/images/design/v2/ui/smeta/print.png) 50% 50% no-repeat;
+	background-size: 20px 20px;
+}
+#budget_calculator_navi_export a#budget_calculator_excel:hover,
+#budget_calculator_navi_export a#budget_calculator_print:hover {
+	background-color: #50cc0e;
+}
+#budget_calculator_navi .budget_calculator_navi_item {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	font-size: 14px;
+	line-height: 1.15;
+	letter-spacing: -0.25px;
+	color: #888;
+	padding: 20px 30px 20px 75px;
+	font-weight: 700;
+	z-index: 2;
+	cursor: pointer;
+	transition: 0.5s;
+}
+#budget_calculator_navi .budget_calculator_navi_item:hover {
+	color: #e68506;
+}
+#budget_calculator_navi .budget_calculator_navi_item.active {
+	background: #fff;
+	color: #256786;
+	cursor: default;
+	-moz-box-shadow:     0px 4px 15px 0 rgba(230,133,6, 0.15), 0px 2px 5px 0 rgba(154,58,0, 0.15);
+	-webkit-box-shadow:  0px 4px 15px 0 rgba(230,133,6, 0.15), 0px 2px 5px 0 rgba(154,58,0, 0.15);
+	box-shadow:          0px 4px 15px 0 rgba(230,133,6, 0.15), 0px 2px 5px 0 rgba(154,58,0, 0.15);
+}
+#budget_calculator_navi .budget_calculator_navi_item.active:after {
+	position: absolute;
+	background: #e68506;
+	height: 2px;
+	left: 0;
+	bottom: -1px;
+	right: 0;
+	content: '';
+	z-index: 2;
+}
+#budget_calculator_navi .budget_calculator_navi_item:before {
+	height: 40px;
+	width: 40px;
+	content: '';
+	border-radius: 50%;
+	opacity: 0.5;
+	border: 1px solid rgba(0,0,0, 0.3);
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	margin-top: -21px;
+}
+#budget_calculator_navi .budget_calculator_navi_item.works:before {
+	background: transparent url(/images/design/v2/ui/smeta/navi_works.png) 50% 50% no-repeat;
+	background-size: 22px 20px;
+}
+#budget_calculator_navi .budget_calculator_navi_item.materials:before {
+	background: transparent url(/images/design/v2/ui/smeta/navi_materials.png) 50% 50% no-repeat;
+	background-size: 26px 24px;
+}
+#budget_calculator_navi .budget_calculator_navi_item.facing:before {
+	background: transparent url(/images/design/v2/ui/smeta/navi_facing.png) 50% 50% no-repeat;
+	background-size: 24px 24px;
+}
+#budget_calculator_navi .budget_calculator_navi_item.active:before {
+	border: 1px solid rgba(0,0,0, 0.3);
+	opacity: 1;
+}
+#budget_calculator_navi .budget_calculator_navi_price {
+	font-size: 16px;
+	line-height: 1.15;
+	letter-spacing: -0.25px;
+	font-weight: 400;
+	padding-top: 5px;
+	transition: 0.5s;
+}
+#budget_calculator_navi .budget_calculator_navi_item:hover .budget_calculator_navi_price {
+	color: #222;
+}
+#budget_calculator_navi .budget_calculator_navi_item.active .budget_calculator_navi_price {
+	color: #3baa00;
+}
+#budget_calculator_navi .budget_calculator_navi_price span {
+	font-size: 11px;
+	line-height: 1.15;
+	letter-spacing: normal;
+	color: #3baa00;
+	vertical-align: top;
+	display: inline-block;
+	background: rgba(107, 255, 28, 0.2);
+	padding: 3px 7px;
+	border-radius: 3px;
+	margin-left: 3px;
+}
+#budget_calculator_navi .budget_calculator_navi_price span.red {
+	color: #cc0000;
+	background: rgba(255, 28, 28, 0.1);
+}
+#budget_calculator_options {
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	right: 0;
+	font-size: 0;
+	line-height: 0;
+}
+#budget_calculator_options a {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 32px;
+	height: 32px;
+	margin-right: 25px;
+	transition: 0.5s;
+}
+#budget_calculator_options a:hover,
+#budget_calculator_options a.active {
+	opacity: 1;
+}
+#budget_calculator_options a.active {
+	cursor: pointer;
+}
+#budget_calculator_options em {
+	display: inline-block;
+	vertical-align: top;
+	width: 1px;
+	height: 32px;
+	background: rgba(0,0,0, 0.1);
+	margin-right: 20px;
+}
+#budget_calculator_options a:before {
+	width: 40px;
+	height: 40px;
+	display: block;
+	border: 1px solid rgba(0,0,0, 0.4);
+	border-radius: 50%;
+	position: absolute;
+	content: '';
+	top: 50%;
+	left: 50%;
+	opacity: 0.3;
+	margin: -21px 0 0 -21px;
+}
+#budget_calculator_options a.active:before {
+	border: 1px solid rgba(0,0,0, 0.15);
+	opacity: 1;
+}
+#budget_calculator_options a#budget_calculator_alerts:before {
+	background: transparent url(/images/design/v2/ui/smeta/alert.png) 50% 50% no-repeat;
+	background-size: 24px 24px;
+}
+#budget_calculator_options a#budget_calculator_economy:before {
+	background: transparent url(/images/design/v2/ui/smeta/ruble.png) 50% 50% no-repeat;
+	background-size: 24px 24px;
+}
+#budget_calculator_options a.active#budget_calculator_alerts:before {
+	background: transparent url(/images/design/v2/ui/smeta/alert_active.png) 50% 50% no-repeat;
+	background-size: 24px 24px;
+}
+#budget_calculator_options a.active#budget_calculator_economy:before {
+	background: transparent url(/images/design/v2/ui/smeta/ruble_active.png) 50% 50% no-repeat;
+	background-size: 24px 24px;
+}
+#budget_calculator_options a span {
+	position: absolute;
+	bottom: -4px;
+	right: -10px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	font-size: 11px;
+	line-height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	background: #dbdbdb;
+	color: #7d7d7d;
+}
+#budget_calculator_options a.active span {
+	background: #3baa00;
+	color: #fff;
+}
+#budget_calculator_options a.active span:before {
+	background: transparent;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #3baa00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -11px;
+    margin-left: -11px;
+    animation-name: pulse_arrow;
+    -webkit-animation-name: pulse_arrow;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+#budget_calculator_options a.active.red span {
+	background: #cc0000;
+}
+#budget_calculator_options a.active.red span:before {
+    border: 1px solid #cc0000;
+}
+#budget_calculator_menu_wrapper {
+    background: #131313;
+    position: absolute;
+    z-index: 21;
+	top: 80px;
+	left: 0;
+	bottom: 0;
+    width: 40px;
+    overflow: hidden;
+    transition: 0.5s;
+    border-right: 2px solid #000;
+}
+#budget_calculator_menu {
+	display: inline-block;
+    position: relative;
+    z-index: 22;
+    background: #131313;
+}
+
+#budget_calculator_slides .section {
+	padding: 0;
+}
+#budget_calculator_slides .section h5 {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -0.5px;
+	margin-top: -5px;
+	padding: 20px;
+}
+#budget_calculator_slides .section table {
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+#budget_calculator_slides .section table tr td {
+	padding: 5px 10px;
+	font-size: 13px;
+	line-height: 1.3;
+	vertical-align: middle;
+	height: 24px;
+	text-align: center;
+	border-top: 1px solid rgba(0,0,0, 0.1);
+}
+#budget_calculator_slides .section table tr:nth-child(odd) td {
+	background: rgba(0,0,0, 0.025);
+}
+#budget_calculator_slides .section table tr td:first-child {
+	padding-left: 20px;
+	text-align: left;
+}
+#budget_calculator_slides .section table tr td+td {
+	border-left: 1px solid rgba(0,0,0, 0.1);
+}
+#budget_calculator_slides .section table tr.header td {
+	border-top: 1px solid #d0dbe4;
+	background: #f1f5f8;
+	color: #a3c0d7;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-left: none;
+}
+#budget_calculator_slides .section table tr.header+tr td {
+	border-top: 1px solid #d0dbe4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
