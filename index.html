@@ -3505,11 +3505,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="footer_bar_tool pen bordered is_fast " onclick="load_v2_modal_from_id('pro_tools_modal');" id="freelines_opener">
+                    <div class="footer_bar_tool pen bordered is_fast " id="freeline">
                                                 <div class="footer_bar_comment">Нарисовать элемент</div>
                         <a id="freeline_pro"></a>
                                                                     </div>
-                    <div class="footer_bar_tool comment bordered is_fast " onclick="load_v2_modal_from_id('pro_tools_modal');">
+                    <div class="footer_bar_tool comment bordered is_fast " id="comments">
                                                 <div class="footer_bar_comment">Добавить комментарий</div>
                         <a id="comments_pro"></a>
                         <div class="footer_bar_tip_wrapper"><span class="footer_bar_tip_close">Закрыть</span>
@@ -3524,14 +3524,12 @@
                         </div>
                     </div>
                     
-                    <div class="footer_bar_tool image bordered" id="addimage_opener">
+                    <div class="footer_bar_tool image bordered" id="addimage_opener"
+					onclick="document.getElementById('file-input-picture').click();">
                                                 <div class="footer_bar_comment">Добавить изображение</div>
                         <a></a>
-                        <div id="addimage_menu">
-                                                        <div class="addimage_menu_warning">Загрузка изображений доступна в старших тарифах PRO-версии программы.</div>
-                                                    </div>
-                                            </div>
-
+                  
+                     </div>
                                             <div class="footer_bar_tool display_none display_inline_on_furniture display_inline_on_santeh group_items bordered">
                             <div class="footer_bar_comment">Выделить группу предметов</div>
                             <a id="select_group_item" ></a>
