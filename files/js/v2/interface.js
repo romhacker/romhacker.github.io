@@ -1155,7 +1155,7 @@ $(function() {
 		if ($(this).hasClass("is_pro") && !$(this).hasClass("group") && !$(this).hasClass("root_group")) {
 			console.log('is_pro');
 			load_v2_modal_from_id('pro_tools_modal');
-			return false;
+			return true;
 		}
 		
 		if (walls.db && !$(this).hasClass("group")) {

@@ -1,0 +1,8 @@
+POST: {"object_id":"0","plan_id":"-1","floor_uid":"4"}
+SESSION keys: []
+POST: {"object_id":"0","plan_id":"-1","floor_uid":"4"}
+SESSION keys: []
+POST: {"object_id":"0","plan_id":"-1","floor_uid":"4"}
+SESSION keys: []
+POST: {"object_id":"0","plan_id":"-1","floor_uid":"4"}
+SESSION keys: []

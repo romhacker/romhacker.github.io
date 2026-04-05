@@ -1,0 +1,37 @@
+<?php
+session_start();
+header('Content-Type: application/json; charset=utf-8');
+
+$floorId = isset($_POST['floor_id']) ? (string)$_POST['floor_id'] : '';
+
+if (!$floorId || empty($_SESSION['last_imported_full_root'])) {
+    echo json_encode(array('result' => 'error', 'message' => 'no data'));
+    exit;
+}
+
+$root = $_SESSION['last_imported_full_root'];
+$floor = isset($root['floors'][$floorId]) ? $root['floors'][$floorId] : null;
+
+if (!$floor || !isset($floor['plans'])) {
+    echo json_encode(array('result' => 'error', 'message' => 'floor not found'));
+    exit;
+}
+
+$planId = isset($floor['plan_id']) ? $floor['plan_id'] : null;
+if (!$planId || !isset($floor['plans'][$planId])) {
+    // берём первый план
+    reset($floor['plans']);
+    $planId = key($floor['plans']);
+}
+
+$planObj = $floor['plans'][$planId];
+$data = isset($planObj['data']) ? $planObj['data'] : $planObj;
+
+echo json_encode(array(
+    'result'  => 'success',
+    'plan_id' => (string)$planId,
+    'floor_id' => $floorId,
+    'data'    => (string)$data,
+));
+exit;
+?>

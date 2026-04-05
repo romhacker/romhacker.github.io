@@ -1,0 +1,16 @@
+<?php
+session_start();
+
+header('Content-Type: application/json; charset=utf-8');
+
+$plan = json_decode(file_get_contents(__DIR__ . '/plan.json'), true);
+
+echo json_encode([
+    'plan' => $plan,
+    'visual' => ''
+]);
+
+echo json_encode([
+    'plan' => [],
+    'visual' => ''
+]);

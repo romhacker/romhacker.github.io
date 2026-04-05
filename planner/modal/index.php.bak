@@ -1,0 +1,93 @@
+<?php
+
+$method = $_POST['method'] ?? $_GET['method'] ?? '';
+
+if ($method === 'pdf') {
+    echo '
+    <div id="pdf_modal_stub">
+        <div id="pdf_settings_core" data-print_settings="">
+            <input type="text" name="pdf_author">
+            <input type="text" name="pdf_address">
+            
+            <div id="pdf_settings_tabs">
+                <div class="pdf_settings_tab active">Tab</div>
+            </div>
+
+            <div id="pdf_settings_plans">
+                <div id="config_pdf_columns"></div>
+            </div>
+
+            <div id="config_pdf_plans"><input type="checkbox"></div>
+            <div id="config_pdf_plans_current"><input type="checkbox"></div>
+
+            <div id="config_projections"><input type="checkbox"></div>
+            <div id="config_pdf_plans-split_cables"><input type="checkbox"></div>
+
+            <select name="pdf_fonts_scale">
+                <option value="auto">auto</option>
+            </select>
+
+            <select name="pdf_cover_title_font_size">
+                <option value="12">12</option>
+            </select>
+
+            <select name="pdf_cover_title_font">
+                <option value="12">12</option>
+            </select>
+
+            <select name="scale_by_territories">
+                <option value="0">0</option>
+            </select>
+
+            <div id="scale_by_comments"><input type="checkbox"></div>
+            <div id="scale_by_rulers"><input type="checkbox"></div>
+            <div id="scale_by_outer_items"><input type="checkbox"></div>
+            <div id="scale_by_figures"><input type="checkbox"></div>
+            <div id="scale_by_pictures"><input type="checkbox"></div>
+
+            <div id="pdf_settings_cover_options">
+                <input type="text" name="pdf_cover_title">
+                <input type="text" name="pdf_year">
+            </div>
+
+            <div id="pdf_settings_zone_default" class="active"></div>
+            <div id="pdf_settings_zone_ready"></div>
+        </div>
+    </div>
+    ';
+    exit;
+}
+
+if ($method === 'hotkeys') {
+    echo '<div id="hotkeys_modal_stub">Hotkeys</div>';
+    exit;
+}
+
+echo '<div>Unknown modal</div>';
+
+$data = base64_encode(json_encode([
+    "author" => "Stub",
+    "address" => "Test address",
+    "number" => "123",
+    "allPlans" => true,
+    "currentPlan" => false,
+    "checkedPages" => [],
+    "projections" => false,
+    "splitCables" => false,
+    "fontScale" => "auto",
+    "fontSize" => "12",
+    "commonScale" => false,
+    "hideLegends" => false,
+    "titles" => [],
+    "coverTitle" => "Test Project",
+    "scaleByTerritories" => 0,
+    "scaleByComments" => false,
+    "scaleByRulers" => false,
+    "scaleByOuterItems" => false,
+    "scaleByFigures" => false,
+    "scaleByPictures" => false,
+    "coverTitleFontSize" => "12",
+    "year" => date('Y')
+]));
+
+echo '<div id="pdf_settings_core" data-print_settings="'.$data.'"></div>';

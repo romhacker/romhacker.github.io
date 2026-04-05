@@ -1,0 +1,82 @@
+<?php
+
+header('Content-Type: application/json; charset=utf-8');
+
+function out_json($status, $message, $url) {
+    echo json_encode(array(
+        'status' => $status,
+        'message' => $message,
+        'url' => $url
+    ));
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    out_json('error', 'Method not allowed', '');
+}
+
+if (empty($_FILES)) {
+    out_json('error', 'No uploaded file', '');
+}
+
+$file = reset($_FILES);
+
+if (!isset($file['tmp_name'])) {
+    out_json('error', 'tmp_name not found', '');
+}
+
+if (!empty($file['error'])) {
+    out_json('error', 'PHP upload error: ' . $file['error'], '');
+}
+
+$projectRoot = realpath(dirname(__FILE__) . '/../../../');
+if ($projectRoot === false) {
+    out_json('error', 'Project root not found', '');
+}
+
+$storageRoot = $projectRoot . '/storage/images';
+
+if (!is_dir($storageRoot)) {
+    if (!mkdir($storageRoot, 0777, true)) {
+        out_json('error', 'Cannot create storage/images directory', '');
+    }
+}
+
+$ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+
+if ($ext == '') {
+    $ext = 'jpg';
+}
+
+if ($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png' && $ext != 'svg') {
+    out_json('error', 'Invalid extension: ' . $ext, '');
+}
+
+$hash = md5_file($file['tmp_name']);
+
+$dir1 = substr($hash, 0, 2);
+$dir2 = substr($hash, 2, 2);
+$name = substr($hash, 4, 12) . '.' . $ext;
+
+$targetDir = $storageRoot . '/' . $dir1 . '/' . $dir2;
+
+if (!is_dir($targetDir)) {
+    if (!mkdir($targetDir, 0777, true)) {
+        out_json('error', 'Cannot create target directory', '');
+    }
+}
+
+$targetPath = $targetDir . '/' . $name;
+
+if (!file_exists($targetPath)) {
+    move_uploaded_file($file['tmp_name'], $targetPath);
+}
+
+if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
+    out_json('error', 'move_uploaded_file failed', '');
+}
+
+$url = $dir1 . '/' . $dir2 . '/' . $name;
+
+out_json('success', '', $url);
+?>

@@ -52,10 +52,11 @@ if ($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png' && $ext != 'svg') {
     out_json('error', 'Invalid extension: ' . $ext, '');
 }
 
-$hash = md5(uniqid(rand(), true));
+$hash = md5_file($file['tmp_name']);
+
 $dir1 = substr($hash, 0, 2);
 $dir2 = substr($hash, 2, 2);
-$name = substr($hash, 4, 12) . '_' . rand(10000, 99999) . '.' . $ext;
+$name = substr($hash, 4, 12) . '.' . $ext;
 
 $targetDir = $storageRoot . '/' . $dir1 . '/' . $dir2;
 
@@ -66,6 +67,7 @@ if (!is_dir($targetDir)) {
 }
 
 $targetPath = $targetDir . '/' . $name;
+
 
 if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
     out_json('error', 'move_uploaded_file failed', '');

@@ -1,0 +1,158 @@
+<?php
+session_start();
+
+header('Content-Type: application/json; charset=utf-8');
+
+function out_json($data) {
+    echo json_encode($data);
+    exit;
+}
+
+function get_active_floor_and_plan($root) {
+    if (!isset($root['floors']) || !is_array($root['floors'])) {
+        return array(null, null, null);
+    }
+
+    foreach ($root['floors'] as $floorId => $floor) {
+        if (!is_array($floor) || !isset($floor['plans']) || !is_array($floor['plans'])) {
+            continue;
+        }
+
+        if (isset($floor['plan_id']) && $floor['plan_id'] !== '' && isset($floor['plans'][$floor['plan_id']])) {
+            return array($floorId, $floor['plan_id'], $floor['plans'][$floor['plan_id']]);
+        }
+
+        foreach ($floor['plans'] as $planId => $planObj) {
+            return array($floorId, $planId, $planObj);
+        }
+    }
+
+    return array(null, null, null);
+}
+
+function build_flat_payload($planObj, $objectId) {
+    /* новый формат: внутри plans лежит оболочка с label/data/webgl_data */
+    if (isset($planObj['data']) && is_array($planObj['data'])) {
+        $payload = array(
+            'plan' => $planObj['data'],
+            'visual' => ''
+        );
+    }
+    /* если вдруг внутри есть старый формат */
+    elseif (isset($planObj['plan']) && is_array($planObj['plan'])) {
+        $payload = array(
+            'plan' => $planObj['plan'],
+            'visual' => isset($planObj['visual']) ? $planObj['visual'] : ''
+        );
+    }
+    /* fallback */
+    else {
+        $payload = array(
+            'plan' => $planObj,
+            'visual' => ''
+        );
+    }
+
+    $payload['plan']['id'] = (string)$objectId;
+
+    if (!isset($payload['plan']['plan_id'])) {
+        $payload['plan']['plan_id'] = '';
+    }
+
+    return $payload;
+}
+
+if (!isset($_POST['plan_data']) || $_POST['plan_data'] === '') {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'plan_data is empty'
+    ));
+}
+
+$zipBinary = base64_decode($_POST['plan_data'], true);
+if ($zipBinary === false) {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'Cannot decode base64'
+    ));
+}
+
+$tmpFile = tempnam(sys_get_temp_dir(), 'plan_');
+if ($tmpFile === false) {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'Cannot create temp file'
+    ));
+}
+
+file_put_contents($tmpFile, $zipBinary);
+
+$zip = new ZipArchive();
+$res = $zip->open($tmpFile);
+
+if ($res !== TRUE) {
+    @unlink($tmpFile);
+    out_json(array(
+        'result' => 'error',
+        'message' => 'Cannot open ZIP'
+    ));
+}
+
+$planContent = $zip->getFromName('plan');
+$zip->close();
+@unlink($tmpFile);
+
+if ($planContent === false || $planContent === '') {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'File plan not found in ZIP'
+    ));
+}
+
+$root = json_decode($planContent, true);
+file_put_contents(__DIR__ . '/DEBUG.txt', 'INDEX HIT' . PHP_EOL, FILE_APPEND);
+$result = file_put_contents(__DIR__ . '/plan.json', json_encode($root));
+
+file_put_contents(__DIR__ . '/DEBUG.txt', 'WRITE RESULT: ' . $result . PHP_EOL, FILE_APPEND);
+
+if (!is_array($root)) {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'Invalid JSON in plan'
+    ));
+}
+
+$objectId = isset($root['object_id']) ? (string)$root['object_id'] : (string)time();
+
+list($floorId, $planId, $planObj) = get_active_floor_and_plan($root);
+
+if ($floorId === null || $planId === null || !is_array($planObj)) {
+    out_json(array(
+        'result' => 'error',
+        'message' => 'Cannot find active floor or plan'
+    ));
+}
+
+$converted = build_flat_payload($planObj, $objectId);
+
+/* на всякий случай сохраняем */
+$projectRoot = realpath(dirname(__FILE__) . '/../../../../');
+if ($projectRoot !== false) {
+    $importDir = $projectRoot . '/storage/imported_projects';
+    if (!is_dir($importDir)) {
+        @mkdir($importDir, 0777, true);
+    }
+    @file_put_contents($importDir . '/' . $objectId . '_source.json', json_encode($root));
+    @file_put_contents($importDir . '/' . $objectId . '_flat.json', json_encode($converted));
+}
+
+$_SESSION['last_imported_object_id'] = $objectId;
+$_SESSION['last_imported_floor_id']  = (string)$floorId;
+$_SESSION['last_imported_plan_id']   = (string)$planId;
+$_SESSION['last_imported_plan_data'] = json_encode($converted['plan']);
+$_SESSION['last_imported_full_root'] = $root;
+
+out_json(array(
+    'reload' => 1
+));
+?>
