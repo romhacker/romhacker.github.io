@@ -1681,7 +1681,7 @@ function item_search_activate(value) {
 function item_search_start() {
 	if (!$("#item_search_wrapper").length || !$("#item_search_submit").hasClass("active")) return false;
 	$.ajax({
-		url: langUrl + '/planner/item_search/',
+		url: langUrl + 'http://www.remplanner.ru/planner/item_search/',
 	    cache: false,
 	    dataType : "html",
 	    timeout: 15000,
